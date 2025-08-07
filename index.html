@@ -99,12 +99,29 @@
   <div id="main-content">
     <h1>🎉 Happy Birthday, My Love 💕</h1>
     <h2>wishes by Kaishyap</h2>
+<!-- Background Music -->
+<audio id="bg-music" loop>
+  <source src="song.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>
 
-    <!-- Background Music -->
-    <audio id="bg-music" autoplay loop>
-      <source src="song.mp3" type="audio/mpeg">
-      Your browser does not support the audio tag.
-    </audio>
+<!-- Play Music Button -->
+<button id="play-btn" style="
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  font-size: 1.2em;
+  background: #fff;
+  color: #ff69b4;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #fff;
+  z-index: 999;
+">🎵 Play Music</button>
+
 
     <!-- Image Slider -->
     <div id="slider">
@@ -129,6 +146,15 @@
 
   <!-- JS Scripts -->
   <script>
+// 🎶 Play Music on Button Click
+document.getElementById("play-btn").addEventListener("click", () => {
+  const music = document.getElementById("bg-music");
+  music.play();
+
+  document.getElementById("play-btn").style.display = "none"; // hide button after play
+});
+
+
     // 🎉 Emoji Rain Generator
     function startEmojiRain() {
       const emojis = ['💖','🎉','🎂','😘','💘','🥳'];
@@ -187,5 +213,4 @@
 
 </body>
 </html>
-
 
